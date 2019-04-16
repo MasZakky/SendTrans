@@ -56,7 +56,9 @@ class SendTransI2C{
 #endif
     
     int8_t setWrite(int8_t val);
-    int8_t setWrite(int8_t *val,int8_t val2);
+    int8_t setWrite(int8_t val,int8_t val2);
+    int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
+
 
     int8_t getRead(int8_t val,int8_t &val2);
     int8_t getRead(int8_t val,int8_t &val2,int8_t val3);
