@@ -1,21 +1,7 @@
-# SendTrans
+# SendTrans I2C or SPI or UART
 <h3>Library Simple TwoWire</h3>
 <h6>
     
-    #define Not_UseSwitch 0
-#define Yes_UseSwitch 1
-
-#define Yes_UseExpander 0
-#define Not_UseExpander 1
-
-#define Use_TCA9548A 0
-
-#define _AddressTCA9548A 0x70
-
-#define Process_Not_Found -1
-#define Process_OK         0 
-#define Process_ERROR      1
-
     int8_t setWire(byte Address);
     int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
     
