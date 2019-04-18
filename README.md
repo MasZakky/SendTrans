@@ -1,6 +1,5 @@
 # SendTrans
 <h3>Library Simple TwoWire</h3>
-<pre>
     <h6>int8_t setWire(byte Address);</h6>
 
     <h6>int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7); </h6>
@@ -27,4 +26,4 @@
     <h6>//read</h6>
     <h6>int8_t getRead(int val,int& val2);</h6>
     <h6>int8_t getRead(int val,int& val2,int val3);</h6>
-</pre>
+
