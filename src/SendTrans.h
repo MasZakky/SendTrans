@@ -2,7 +2,7 @@
 #define _SendTrans_H_
 
 #include "Arduino.h"
-#include <TinyWireM.h>
+//#include <TinyWireM.h>
 #include <Wire.h>
 
 #if defined(__AVR_AT90Mega169__) | defined(__AVR_ATmega169__) | \
@@ -33,7 +33,7 @@
 #define Process_ERROR      1
 
 class SendTransI2C{
-  public: `
+  public: 
     int8_t setWire(byte Address);
     int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
  
@@ -44,11 +44,7 @@ class SendTransI2C{
     
     // Wire or Wire1 or Wire3 ~~
 #if !defined EX_Tiny    
-    #ifdef ARDUINO_SAM_DUE
-        int8_t InstalWire(TwoWire *val = Wire1);
-    #else  
-        int8_t InstalWire(TwoWire *val = Wire);
-    #endif
+        int8_t InstalWire(TwoWire* val);
 #endif
     
     //Write
@@ -57,14 +53,14 @@ class SendTransI2C{
     int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
  
     //read
-    int8_t getRead(int val,int& val2);
-    int8_t getRead(int val,int& val2,int val3);
+    int8_t getRead(int val,int* val2);
+    int8_t getRead(int val,int* val2,int val3);
   
   protected:
     int8_t AutoSwitchChannel();
     
 #if !defined(EX_Tiny)
-    TwoWire ExWire;  
+    TwoWire *ExWire;  
 #endif
     byte _Address,_Address2;
     int8_t _useSwitch;
