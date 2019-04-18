@@ -13,18 +13,21 @@ int8_t SendTransI2C::setWire(byte val,byte val2,byte val3,byte val4,byte val5,by
 int8_t SendTransI2C::setMultiPlexer(int8_t val ,int8_t val2){
   _useSwitch = val;
   _nameIC = val2;
+  return Process_OK;
 }
 
 int8_t SendTransI2C::setAddressMultiPlexer(byte Address = _AddressTCA9548A,byte val1,byte val2,byte val3,byte val4){
   _Address2 = Address | val<<1 | val2<<2 | val3<<3 | val4<<4;
+  return Process_OK;
 }
 
 int8_t SendTransI2C::setChannel(int8_t val){
   _setChannel = (1<<val);
+  return Process_OK;
 }
 
 #if !defined(EXTiny)
-int8_t SendTransI2C::InstalWire(TwoWire &val){
+int8_t SendTransI2C::InstalWire(TwoWire *val){
   ExWire = val;
   return Process_OK;
 }
