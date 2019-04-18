@@ -16,7 +16,7 @@ int8_t SendTransI2C::setMultiPlexer(int8_t val ,int8_t val2){
   return Process_OK;
 }
 
-int8_t SendTransI2C::setAddressMultiPlexer(byte Address = _AddressTCA9548A,byte val1,byte val2,byte val3,byte val4){
+int8_t SendTransI2C::setAddressMultiPlexer(byte Address,byte val1,byte val2,byte val3,byte val4){
   _Address2 = Address | val<<1 | val2<<2 | val3<<3 | val4<<4;
   return Process_OK;
 }
