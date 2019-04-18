@@ -41,9 +41,9 @@ class SendTransI2C{
 
 #if !defined EX_Tiny    
     #ifdef ARDUINO_SAM_DUE
-        int8_t InstalWire(TwoWire &val = Wire1);
+        int8_t InstalWire(TwoWire *val = Wire1);
     #else  
-        int8_t InstalWire(TwoWire &val = Wire);
+        int8_t InstalWire(TwoWire *val = Wire);
     #endif
 #endif
     
@@ -51,7 +51,6 @@ class SendTransI2C{
     int8_t setWrite(int8_t val,int8_t val2);
     int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
  
-
     int8_t getRead(int val,int& val2);
     int8_t getRead(int val,int& val2,int val3);
   
