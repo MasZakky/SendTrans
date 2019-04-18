@@ -1,6 +1,6 @@
 # SendTrans
 <h3>Library Simple TwoWire</h3>
-    <h6>
+<h6>
     
     int8_t setWire(byte Address);
     int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
@@ -20,26 +20,27 @@
  
     //read>
     int8_t getRead(int val,int& val2);
-    int8_t getRead(int val,int& val2,int val3);</h6>
+    int8_t getRead(int val,int& val2,int val3);
+</h6>
     
-    <h4>All the command fuctions with RETURN</h4>
-    <ul>
-        <li> <h5> Process_OK </h5> </li>
-        <li> <h5> Process_ERROR </h5> </li>
-    </ul>
-    
-    <h4>Notice</h4>
-    <pre><h5> 
-    if  defined(__AVR_AT90Mega169__) | defined(__AVR_ATmega169__) | \
-        defined(__AVR_AT90Mega165__) | defined(__AVR_ATmega165__) | \
-        defined(__AVR_ATmega325__) | defined(__AVR_ATmega3250__) | \
-        defined(__AVR_ATmega645__) | defined(__AVR_ATmega6450__) | \
-        defined(__AVR_ATmega329__) | defined(__AVR_ATmega3290__) | \
-        defined(__AVR_ATmega649__) | defined(__AVR_ATmega6490__) | \
-        defined(__AVR_ATtiny25__) | defined(__AVR_ATtiny45__) | defined(__AVR_ATtiny85__) | \
-        defined(__AVR_AT90Tiny26__) | defined(__AVR_ATtiny26__) | \
-        defined(__AVR_ATtiny84__) | defined(__AVR_ATtiny44__) | \
-        defined(__AVR_AT90Tiny2313__) | defined(__AVR_ATtiny2313__)
+<h4>All the command fuctions with RETURN</h4>
+<ul>
+    <li> <h5> Process_OK </h5> </li>
+    <li> <h5> Process_ERROR </h5> </li>
+</ul>
+
+<h4>Notice</h4>
+<pre><h5> 
+    if  defined(__AVR_AT90Mega169__)  or defined(__AVR_ATmega169__)   or
+        defined(__AVR_AT90Mega165__)  or defined(__AVR_ATmega165__)   or
+        defined(__AVR_ATmega325__)    or defined(__AVR_ATmega3250__)  or
+        defined(__AVR_ATmega645__)    or defined(__AVR_ATmega6450__)  or
+        defined(__AVR_ATmega329__)    or defined(__AVR_ATmega3290__)  or
+        defined(__AVR_ATmega649__)    or defined(__AVR_ATmega6490__)  or
+        defined(__AVR_ATtiny25__)     or defined(__AVR_ATtiny45__)    or defined(__AVR_ATtiny85__) or
+        defined(__AVR_AT90Tiny26__)   or defined(__AVR_ATtiny26__)    or
+        defined(__AVR_ATtiny84__)     or defined(__AVR_ATtiny44__)    or
+        defined(__AVR_AT90Tiny2313__) or defined(__AVR_ATtiny2313__)
             Automatic disable "InstalWire" and "Wire" will be replaced with "TinyWireM" 
         
-        </h5></pre>
+</h5></pre>
