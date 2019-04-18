@@ -2,7 +2,7 @@
 #define _SendTrans_H_
 
 #include "Arduino.h"
-//#include <TinyWireM.h>
+#include <TinyWireM.h>
 #include <Wire.h>
 
 #if defined(__AVR_AT90Mega169__) | defined(__AVR_ATmega169__) | \
