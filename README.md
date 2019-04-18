@@ -2,25 +2,55 @@
 <h3>Library Simple TwoWire</h3>
 <h6>
     
+    #define Not_UseSwitch 0
+#define Yes_UseSwitch 1
+
+#define Yes_UseExpander 0
+#define Not_UseExpander 1
+
+#define Use_TCA9548A 0
+
+#define _AddressTCA9548A 0x70
+
+#define Process_Not_Found -1
+#define Process_OK         0 
+#define Process_ERROR      1
+
     int8_t setWire(byte Address);
     int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
     
     //I2C MultiPlexer
     int8_t setMultiPlexer(int8_t val,int8_t val2);
+                          Value     ,IC MuliPlexer
+        Value => Not_UseSwitch or Yes_UseSwitch
+        IC    => Use_TCA9548A
+        
     int8_t setAddressMultiPlexer(byte Address,byte val1,byte val2,byte val3,byte val4);
+                                 Value       ,A0       ,A1       ,A2       ,A3 or 0
+        Value       => Address IC MuliPlexer
+        pinAddr     => A0,A1,A2,A3/0
+        
     int8_t setChannel(int8_t val);
+                      Channel
+        Channel => 0 ~ 7
     
     // Wire or Wire1 or Wire3 ~~
     int8_t InstalWire(TwoWire *val);
+        Syntax:
+         - InstalWire(&Wire);
+         - InstalWire(&Wire1);
+         - InstalWire(&Wire2);
     
     //Write
     int8_t setWrite(int8_t val);
     int8_t setWrite(int8_t val,int8_t val2);
     int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
- 
+    
     //read>
     int8_t getRead(int val,int& val2);
     int8_t getRead(int val,int& val2,int val3);
+    
+    
 </h6>
     
 <h4>All the command fuctions with RETURN</h4>
