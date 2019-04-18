@@ -18,27 +18,32 @@
       #define EX_Tiny 
 #endif
 
-#define Use_Default     0
-#define Use_External    1
-//#define Use_Expander  2
+// #define Not_UseSwitch 0
+// #define Yes_UseSwitch 1
+
+// #define Yes_UseExpander 0
+// #define Not_UseExpander 1
+
+// #define Use_TCA9548A 0
 
 #define Process_Not_Found -1
 #define Process_OK         0 
 #define Process_ERROR      1
 
 class SendTransI2C{
-  public: 
-#ifdef ARDUINO_SAM_DUE
-    int8_t setWire(int8_t val = Use_External);
-#else
-    int8_t setWire(int8_t val = Use_Default);
-#endif
-    int8_t setWire(int8_t val, byte Address);
+  public: `
+    int8_t setWire(byte Address);
+    int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
+//     int8_t setClock(uint16_t val);
+//     int8_t setMultiPlexer(int8_t val = Not_UseSwitch,int8_t val2 = Use_TCA9548A);
+//     int8_t setChannel(int8_t val);
     
 #ifdef ARDUINO_SAM_DUE
     int8_t InstalWire(TwoWire &val = Wire1);
+#elif defined(EX_Tiny)
+    int8_t InstalWire();
 #else  
-    int8_t InstalWire(TwoWire &val);
+    int8_t InstalWire(TwoWire &val = Wire);
 #endif
     
     int8_t setWrite(int8_t val);
@@ -50,10 +55,16 @@ class SendTransI2C{
     int8_t getRead(int8_t val,uint8_t& val2,uint8_t val3);
   
   protected:
-  
+//     int8_t AutoSwitchChannel();
+    
+  #if !defined(EX_Tiny)
     TwoWire ExWire;  
+  #endif
     byte _Address;
-    int8_t _useWire;
+//     uint16_t _Clock;
+//     int8_t _useSwitch;
+//     int8_t _nameIC;
+//     int8_t _setChannel;
 };
 //extern SendTransI2C SimpleWire;
 #endif
