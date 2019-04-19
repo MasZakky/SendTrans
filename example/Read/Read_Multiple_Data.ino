@@ -1,12 +1,12 @@
 #include "SendTrans.h"
-SendTrans SimpleWire;
+SendTransI2C SimpleWire;
 
 int SubbAddress = 8;
 int val = 6;
 
 void setup() {
   Wire.begin(); // join i2c bus (address optional for master)
-  SimpleWire.setWire(0x2C); // Address
+  SimpleWire.setWire(0x00); // Address
   Serial.begin(9600);
 }
 
