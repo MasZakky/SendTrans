@@ -18,15 +18,28 @@
       #define EX_Tiny 
 #endif
 
-#define Not_UseSwitch 0
-#define Yes_UseSwitch 1
+#if defined(Not_UseSwitch) || defined(Yes_UseSwitch)
+    #undef Not_UseSwitch
+    #undef Yes_UseSwitch
+#endif
+    #define Not_UseSwitch 0
+    #define Yes_UseSwitch 1
+#id defined(Yes_UseExpander) || defined(Not_UseExpander)
+    #undef Yes_UseExpander
+    #undef Not_UseExpander
+#endif
+    #define Yes_UseExpander 0
+    #define Not_UseExpander 1
 
-#define Yes_UseExpander 0
-#define Not_UseExpander 1
+#if defined(Use_TCA9548A)
+    #undef Use_TCA9548A
+#endif
+    #define Use_TCA9548A 0
 
-#define Use_TCA9548A 0
-
-#define _AddressTCA9548A 0x70
+#if defined(_AddressTCA9548A)
+    #undef _AddressTCA9548A
+#endif
+    #define _AddressTCA9548A 0x70
 
 #define Process_Not_Found -1
 #define Process_OK         0 
@@ -35,7 +48,7 @@
 class SendTransI2C{
   public: 
     int8_t setWire(byte Address);
-    int8_t setWire(byte val,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
+    int8_t setWire(byte val,byte val1,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7);
  
     //I2C MultiPlexer
     int8_t setMultiPlexer(int8_t val = Not_UseSwitch,int8_t val2 = Use_TCA9548A);
