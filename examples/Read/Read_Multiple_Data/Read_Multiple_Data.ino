@@ -22,7 +22,7 @@ void loop() {
     Serial.print(c[a]);         // print 
   }
 
-  free(c); //Free memory 
+  free(c); //Free memory from ram
   
   delay(500);
 }
