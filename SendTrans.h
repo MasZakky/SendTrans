@@ -2,8 +2,6 @@
 #define _SendTrans_H_
 
 #include "Arduino.h"
-#include <TinyWireM.h>
-#include <Wire.h>
 
 #if defined(__AVR_AT90Mega169__) | defined(__AVR_ATmega169__) | \
     defined(__AVR_AT90Mega165__) | defined(__AVR_ATmega165__) | \
@@ -16,6 +14,9 @@
     defined(__AVR_ATtiny84__) | defined(__AVR_ATtiny44__) | \
     defined(__AVR_AT90Tiny2313__) | defined(__AVR_ATtiny2313__)
       #define EX_Tiny 
+      #include <TinyWireM.h>
+#else 
+      #include <Wire.h>
 #endif
 
 #if defined(Not_UseSwitch) || defined(Yes_UseSwitch)
