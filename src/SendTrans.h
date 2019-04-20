@@ -24,7 +24,8 @@
 #endif
     #define Not_UseSwitch 0
     #define Yes_UseSwitch 1
-#id defined(Yes_UseExpander) || defined(Not_UseExpander)
+
+#if defined(Yes_UseExpander) || defined(Not_UseExpander)
     #undef Yes_UseExpander
     #undef Not_UseExpander
 #endif
