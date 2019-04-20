@@ -6,7 +6,7 @@ int8_t SendTransI2C::setWire(byte Address){
 }
 
 int8_t SendTransI2C::setWire(byte val,byte val1,byte val2,byte val3,byte val4,byte val5,byte val6,byte val7){
-  _Address = val | val1<<1 | val2<<2 | val3<<3 | val4<<4 | val5<<5 | val6<<6 | val7<<7;
+  SendTransI2C::setWire(val | val1<<1 | val2<<2 | val3<<3 | val4<<4 | val5<<5 | val6<<6 | val7<<7);
   return Process_OK;
 }
 
