@@ -1,5 +1,5 @@
 #include "SendTrans.h"
-SendTrans SimpleWire;
+SendTransI2C SimpleWire;
 
 int val = 8;
 
