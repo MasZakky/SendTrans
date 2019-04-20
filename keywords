@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map For SendTrans
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+SendTrans KEYWORD1
+SendTransI2C KEYWORD1 
+SendTransSPI KEYWORD1 
+SendTransUART KEYWORD1 
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setWire KEYWORD2
+setMultiPlexer KEYWORD2
+setAddressMultiPlexer KEYWORD2
+setChannel KEYWORD2
+
+InstalWire KEYWORD2
+
+setWrite KEYWORD2
+getRead KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+Not_UseSwitch LITERAL1
+Yes_UseSwitch LITERAL1
+
+Use_TCA9548A LITERAL1
