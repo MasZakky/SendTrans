@@ -3,7 +3,7 @@ SendTrans SimpleWire;
 
 void setup() {
   Wire.begin(); // join i2c bus (address optional for master)
-  SimpleWire.setWire(0x2C); // Address
+  SimpleWire.setWire(0x00); // Address
 }
 
 byte val = 0;
