@@ -1,6 +1,8 @@
 #include "SendTrans.h"
 SendTransI2C SimpleWire;
 
+int SubbAddress ;
+
 void setup() {
   Wire.begin(); // join i2c bus (address optional for master)
   SimpleWire.InstalWire(&Wire);
@@ -11,8 +13,9 @@ void setup() {
 void loop() {
   Wire.setClock(100000); // setClock I2C 100kHZ
 
-  int c = Serial.read()    
-  SimpleWire.setWrite(SubbAddress, c); 
+  int c; 
+  SimpleWire.getRead(SubbAddress, &c); 
+  Serial.println(c);
   
   delay(500);
 }
