@@ -13,7 +13,7 @@ void setup() {
 void loop() {
   Wire.setClock(100000); // setClock I2C 100kHz
 
-  char c = Serial.read()    
+  char c = Serial.read();  
   SimpleWire.setWrite(SubbAddress, c,sizeof(c)); 
   
   delay(500);
