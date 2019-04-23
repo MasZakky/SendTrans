@@ -6,10 +6,10 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-SendTrans KEYWORD2
-SendTransI2C KEYWORD2 
-SendTransSPI KEYWORD2 
-SendTransUART KEYWORD2 
+SendTrans KEYWORD1
+SendTransI2C KEYWORD1 
+SendTransSPI KEYWORD1 
+SendTransUART KEYWORD1 
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -24,6 +24,10 @@ InstalWire  KEYWORD2
 
 setWrite  KEYWORD2
 getRead KEYWORD2
+
+Process_OK KEYWORD2
+Process_Not_Found KEYWORD2
+Process_ERROR KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
