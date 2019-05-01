@@ -93,7 +93,7 @@
             SPI.begin();
             Serial.begin(9600);
                         
-            if(SimpleSPI.SPI(&SPI) != Process_OK) Serial.println("Process_ERROR");
+            if(SimpleSPI.InstalSPI(&SPI) != Process_OK) Serial.println("Process_ERROR");
             else Serial.println("Process_OK");
             
             if(SimpleSPI.setSettings(1000000,MSBFIRST,SPI_MODE0) != Process_OK) Serial.println("Process_ERROR");
