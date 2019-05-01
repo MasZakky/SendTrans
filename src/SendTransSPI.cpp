@@ -1,6 +1,6 @@
 #include "SendTransSPI.h"
 
-int8_t SendTransSPI::setSPI(SPIClass * spi,uint8_t cs){
+int8_t SendTransSPI::InstalSPI(SPIClass * spi,uint8_t cs){
   _spi = spi;
   _cs = cs;
   return Process_OK;
