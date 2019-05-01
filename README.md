@@ -90,7 +90,7 @@
         SendTransSPI SimpleSPI;
         
         void setup(){
-            Wire.begin();
+            SPI.begin();
             Serial.begin(9600);
             
             if(SimpleSPI.setWire(0x00) != Process_OK) Serial.println("Process_ERROR");
