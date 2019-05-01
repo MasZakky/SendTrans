@@ -1,5 +1,13 @@
 # SendTransI2C or SendTransSPI or SendTransUART
 
+<h4>All the command fuctions with RETURN</h4>
+<ul>
+    <li> <h5> Process_OK </h5> </li>
+    <li> <h5> Process_Not_Found </h5> </li>
+    <li> <h5> Process_ERROR </h5> </li>
+</ul>
+
+<h3> Wire </h3>
 <h5> Example Param </h5>
         
         #include "SendTrans.h"
@@ -75,13 +83,69 @@
     
 </h6>
     
-<h4>All the command fuctions with RETURN</h4>
-<ul>
-    <li> <h5> Process_OK </h5> </li>
-    <li> <h5> Process_Not_Found </h5> </li>
-    <li> <h5> Process_ERROR </h5> </li>
-</ul>
+<h3> SPI </h3>
+<h5> Example Param </h5>
+        
+        #include "SendTrans.h"
+        SendTransSPI SimpleSPI;
+        
+        void setup(){
+            Wire.begin();
+            Serial.begin(9600);
+            
+            if(SimpleSPI.setWire(0x00) != Process_OK) Serial.println("Process_ERROR");
+            else Serial.println("Process_OK");
+            
+            if(SimpleSPI.InstalWire(&Wire) != Process_OK) Serial.println("Process_ERROR");
+            else Serial.println("Process_OK");
+            
+        }
+        
+        void loop(){
+            //Do something
+        }
+        
 
+<h3> Command SendTransSPI : </h3>
+
+       1. int8_t InstalSPI(SPIClass spi,uint8_t cs)
+                           spi        , pin CS
+             Default => NULL
+             Syntax:
+             - InstalSPI(&SPI);
+             - InstalSPI(&HSPI); // ESP32
+             - InstalSPI(&VSPI); // ESP32
+                           
+       2. int8_t setSettings(uint32_t clock,uint8_t bitOrder,uint8_t dataMode)
+                              clock        ,bitOrder        ,dataMode
+             Syntax bitOrder:
+                - MSBFIRST
+                - LSBFIRST
+                
+             Syntax dataMode:
+                - SPI_MODE0
+                - SPI_MODE1
+                - SPI_MODE2
+                - SPI_MODE3
+       
+       //Write
+       3. int8_t setWrite(int8_t val);
+                          Data
+                        
+       4. int8_t setWrite(int8_t val,int8_t val2);
+                        Data      ,Data
+                        
+       5.  int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
+                           Data      ,Data array  ,size Array
+    
+       //read>
+       6. int8_t getRead(int val,int& val2);
+                         Value  ,Data
+                       
+       7. int8_t getRead(int val,int& val2 ,int val3);
+                         Value  ,Data Array,size Array
+            
+            
 <h4>Notice</h4>
 <pre><h5> 
     if  defined(__AVR_AT90Mega169__)  or defined(__AVR_ATmega169__)   or
