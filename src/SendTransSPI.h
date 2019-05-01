@@ -8,7 +8,7 @@
 
 class SendTransSPI{
   public:
-    int8_t setSPI(SPIClass * spi,uint8_t cs);
+    int8_t InstalSPI(SPIClass * spi,uint8_t cs);
     int8_t setSetting(uint32_t clock,uint8_t bitOrder,uint8_t dataMode);
 
     //Write
