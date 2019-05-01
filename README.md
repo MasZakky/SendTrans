@@ -65,21 +65,21 @@
              - InstalWire(&Wire2);
     
     //Write
-    7.  int8_t setWrite(int8_t val);
+    7.  int8_t setWrite(byte val);
                         Data
                         
-    8.  int8_t setWrite(int8_t val,int8_t val2);
-                        Data      ,Data
+    8.  int8_t setWrite(byte val,byte val2);
+                        Data    ,Data
                         
-    9.  int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
-                        Data      ,Data array  ,size Array
+    9.  int8_t setWrite(byte val,byte *val2,byte val3);
+                        Data    ,Data array,size Array
     
     //read>
-    10. int8_t getRead(int val,int& val2);
-                       Value  ,Data
+    10. int8_t getRead(byte val,byte val2);
+                       Value   ,Data
                        
-    11. int8_t getRead(int val,int& val2 ,int val3);
-                       Value  ,Data Array,size Array
+    11. int8_t getRead(byte val,byte val2 ,byte val3);
+                       Value   ,Data Array,size Array
     
 </h6>
     
@@ -92,11 +92,11 @@
         void setup(){
             SPI.begin();
             Serial.begin(9600);
-            
-            if(SimpleSPI.setWire(0x00) != Process_OK) Serial.println("Process_ERROR");
+                        
+            if(SimpleSPI.SPI(&SPI) != Process_OK) Serial.println("Process_ERROR");
             else Serial.println("Process_OK");
             
-            if(SimpleSPI.InstalWire(&Wire) != Process_OK) Serial.println("Process_ERROR");
+            if(SimpleSPI.setSettings(1000000,MSBFIRST,SPI_MODE0) != Process_OK) Serial.println("Process_ERROR");
             else Serial.println("Process_OK");
             
         }
@@ -129,21 +129,21 @@
                 - SPI_MODE3
        
        //Write
-       3. int8_t setWrite(int8_t val);
+       3. int8_t setWrite(byte val);
                           Data
                         
-       4. int8_t setWrite(int8_t val,int8_t val2);
-                        Data      ,Data
+       4. int8_t setWrite(byte val,byte val2);
+                          Data    ,Data
                         
-       5.  int8_t setWrite(int8_t val,int8_t *val2,int8_t val3);
-                           Data      ,Data array  ,size Array
+       5.  int8_t setWrite(byte val,byte *val2,byte val3);
+                           Data    ,Data array,size Array
     
        //read>
-       6. int8_t getRead(int val,int& val2);
-                         Value  ,Data
+       6. int8_t getRead(byte val,byte val2);
+                         Value   ,Data
                        
-       7. int8_t getRead(int val,int& val2 ,int val3);
-                         Value  ,Data Array,size Array
+       7. int8_t getRead(byte val,byte val2 ,byte val3);
+                         Value   ,Data Array,size Array
             
             
 <h4>Notice</h4>
